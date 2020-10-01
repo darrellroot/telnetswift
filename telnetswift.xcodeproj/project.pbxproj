@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2FA8A40925253176007D3B57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8A40825253176007D3B57 /* main.swift */; };
+		2FA8A412252531BB007D3B57 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA8A411252531BB007D3B57 /* ArgumentParser */; };
+		2FA8A41525253E26007D3B57 /* TelnetOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8A41425253E26007D3B57 /* TelnetOptions.swift */; };
+		2FA8A41825253FF3007D3B57 /* TcpReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8A41725253FF3007D3B57 /* TcpReader.swift */; };
+		2FA8A41B2525411C007D3B57 /* TelnetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8A41A2525411C007D3B57 /* TelnetError.swift */; };
+		2FA8A42025254469007D3B57 /* NWConnection.State+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8A41F25254469007D3B57 /* NWConnection.State+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,10 @@
 /* Begin PBXFileReference section */
 		2FA8A40525253176007D3B57 /* telnetswift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = telnetswift; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA8A40825253176007D3B57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2FA8A41425253E26007D3B57 /* TelnetOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetOptions.swift; sourceTree = "<group>"; };
+		2FA8A41725253FF3007D3B57 /* TcpReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TcpReader.swift; sourceTree = "<group>"; };
+		2FA8A41A2525411C007D3B57 /* TelnetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetError.swift; sourceTree = "<group>"; };
+		2FA8A41F25254469007D3B57 /* NWConnection.State+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWConnection.State+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA8A412252531BB007D3B57 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +67,21 @@
 		2FA8A40725253176007D3B57 /* telnetswift */ = {
 			isa = PBXGroup;
 			children = (
+				2FA8A41E25254453007D3B57 /* Extensions */,
 				2FA8A40825253176007D3B57 /* main.swift */,
+				2FA8A41425253E26007D3B57 /* TelnetOptions.swift */,
+				2FA8A41725253FF3007D3B57 /* TcpReader.swift */,
+				2FA8A41A2525411C007D3B57 /* TelnetError.swift */,
 			);
 			path = telnetswift;
+			sourceTree = "<group>";
+		};
+		2FA8A41E25254453007D3B57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2FA8A41F25254469007D3B57 /* NWConnection.State+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +100,9 @@
 			dependencies = (
 			);
 			name = telnetswift;
+			packageProductDependencies = (
+				2FA8A411252531BB007D3B57 /* ArgumentParser */,
+			);
 			productName = telnetswift;
 			productReference = 2FA8A40525253176007D3B57 /* telnetswift */;
 			productType = "com.apple.product-type.tool";
@@ -105,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 2FA8A3FC25253176007D3B57;
+			packageReferences = (
+				2FA8A410252531BB007D3B57 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 2FA8A40625253176007D3B57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -119,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA8A41525253E26007D3B57 /* TelnetOptions.swift in Sources */,
+				2FA8A42025254469007D3B57 /* NWConnection.State+extensions.swift in Sources */,
 				2FA8A40925253176007D3B57 /* main.swift in Sources */,
+				2FA8A41B2525411C007D3B57 /* TelnetError.swift in Sources */,
+				2FA8A41825253FF3007D3B57 /* TcpReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +317,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FA8A410252531BB007D3B57 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FA8A411252531BB007D3B57 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FA8A410252531BB007D3B57 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FA8A3FD25253176007D3B57 /* Project object */;
 }
